@@ -1,3 +1,4 @@
+
 public class _12_searchint {
     public static void main(String [] args){
         int [] arr={10,20,30,40,50};
@@ -18,4 +19,6 @@ public class _12_searchint {
         }
     }
 }
+
+
 
