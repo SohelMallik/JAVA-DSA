@@ -5,7 +5,7 @@ public class _15second_Largest {
 
         int[] arr = {12, 34, 45, 45, 3, 4, 5, 34};
 
-        int max = Integer.MIN_VALUE;
+        int max = Integer.MIN_VALUE; 
         int smax = Integer.MIN_VALUE;
 
         for (int num : arr) {
