@@ -1,37 +1,33 @@
-
 import java.util.Arrays;
 
-public class _4Selection_Sort{
-    public static void main(String[] args) {
-
-        int[] arr = {1, 2, 3, 4, 5};
+public class _4Selection_Sort {
+    public static void main (String [] args){
+        int [] arr = {5,6,4,3,2,1};
         int n = arr.length;
 
-        // Outer loop
-        for (int i = 0; i < n - 1; i++) {
+        for(int i = 0; i < n-1; i++){
+            int min = i;
 
-            int minIndex = i;
-
-            // Inner loop: find the minimum element
-            for (int j = i + 1; j < n; j++) {
-                if (arr[j] < arr[minIndex]) {
-                    minIndex = j;
+            for(int j = i+1; j < n; j++){
+                if(arr[j] < arr[min]){
+                    min = j;
                 }
             }
 
-            // Swap only if needed
-            if (minIndex != i) {
-                int temp = arr[i];
-                arr[i] = arr[minIndex];
-                arr[minIndex] = temp;
-            }
+            if (min != i){
+                    int temp = arr[i];
+                    arr[i] = arr[min];
+                    arr[min] = temp;
+                }
 
-            System.out.println(
-                "Pass " + (i + 1) + ": " + Arrays.toString(arr)
+            System.out.println( 
+                "Pass "+ (i+1) + ": " + Arrays.toString(arr)
             );
+
         }
 
-        System.out.println("Sorted Array: " + Arrays.toString(arr));
+        System.out.println("Sorted Arrays :" + Arrays.toString(arr));
+
+
     }
 }
-
