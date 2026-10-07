@@ -18,32 +18,50 @@
 
 class Solution {
     public int[] sortedMerge(int[] a, int[] b) {
+        int n = a.length, m = b.length;
+        int[] res = new int[n + m];
         
-        int [] res = new int[a.length + b.length];
+        int i = 0, j = 0, k = 0;
         
-        int n= a.length;
-        int m = b.length;
-        
-        int i = 0, j = 0 , k = 0;
-        
-        while(i < n ||  j < m){
-            
-            for (i = 0; i < n; i++){
-                
-                res[k++] = a[i];
-            }
-            
-            
-            for (j = 0; j <m; j++){
-                
-                res[k++] = b[j];
+        while (i < n && j < m) {
+            if (a[i] <= b[j]) {
+                res[k++] = a[i++];
+            } else {
+                res[k++] = b[j++];
             }
         }
         
-        Arrays.sort(res);
+        while (i < n) res[k++] = a[i++];
+        while (j < m) res[k++] = b[j++];
         
         return res;
-        
+    }
+}
+
+
+
+
+class Solution {
+    public int[] sortedMerge(int[] a, int[] b) {
+
+        int[] res = new int[a.length + b.length];
+
+        int n = a.length;
+        int m = b.length;
+
+        int k = 0;
+
+        for (int i = 0; i < n; i++) {
+            res[k++] = a[i];
+        }
+
+        for (int j = 0; j < m; j++) {
+            res[k++] = b[j];
+        }
+
+        Arrays.sort(res);
+
+        return res;
     }
 }
 
