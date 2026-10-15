@@ -52,7 +52,8 @@ class Solution {
                 l = mid +1;
             }
         }
-        
+        // T: O(log n)
+        // S : O(1)
         
         ArrayList<Integer> result = new  ArrayList<>();
         
