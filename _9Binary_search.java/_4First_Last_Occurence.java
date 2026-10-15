@@ -19,3 +19,46 @@
 
 // 1 ≤ arr.size() ≤ 106
 // 0 ≤ arr[i], x ≤ 109
+
+class Solution {
+    ArrayList<Integer> find(int arr[], int x) {
+        // code here
+        int first = -1 , last = -1;
+        
+        int l = 0, h = arr.length-1;
+        
+        while(l <= h){
+            int mid = l + (h - l)/2;
+            
+            if(arr[mid] < x) l = mid+1;
+            else if (arr[mid] > x) h = mid -1;
+            else {
+                first = mid;
+                h = mid -1;
+            }
+        }
+        
+        
+        l = 0;
+        h = arr.length-1;
+        
+        while(l <= h){
+            int mid = l + (h - l)/2;
+            
+            if(arr[mid] < x) l = mid+1;
+            else if (arr[mid] > x) h = mid -1;
+            else {
+                last = mid;
+                l = mid +1;
+            }
+        }
+        
+        
+        ArrayList<Integer> result = new  ArrayList<>();
+        
+        result.add(first);
+        result.add(last);
+        
+        return result;
+    }
+}
