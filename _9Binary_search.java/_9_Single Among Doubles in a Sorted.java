@@ -16,6 +16,34 @@
 // 1 ≤ arr.size() ≤ 2 * 106
 // 1 ≤ arr[i] ≤ 106
 
+// APPROACH 1
+
+import java.util.ArrayList;
+
+public class Solution {
+    public static int singleNonDuplicate(ArrayList<Integer> arr) {
+        int l = 0;
+        int h = arr.size() - 1;
+
+        while (l < h) {
+            int mid = l + (h - l) / 2;
+
+            if (mid % 2 == 1) {
+                mid--;
+            }
+
+            if (arr.get(mid).equals(arr.get(mid + 1))) {
+                l = mid + 2;
+            } else {
+                h = mid;
+            }
+        }
+
+        return arr.get(l);
+    }
+}
+
+// APPROACH 2
 class Solution {
     int single(int[] arr) {
         // code here
