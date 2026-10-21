@@ -50,3 +50,12 @@ class Solution {
         return (int) ((sqrt(8*m+1)-1)/2);
     }
 }
+
+// BUILT IN FUNCTION
+
+class Solution {
+    public int arrangeCoins(int n) {
+        long m = n;
+        return (int) ((Math.sqrt(8.0 * m + 1) - 1) / 2);
+    }
+}
