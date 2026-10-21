@@ -33,3 +33,20 @@
 
 // 1 <= n <= 231 - 1
 
+class Solution {
+    public static int sqrt(long n){
+        long l = 1, h = n;
+
+        while(l <= h){
+            long mid = l +(h-l)/2;
+            if(mid == n/mid) return (int)mid;
+            if(mid < n/mid) l = mid +1;
+            else h = mid -1;
+        }
+        return (int)h;
+    }
+    public int arrangeCoins(int n) {
+        long m = n;
+        return (int) ((sqrt(8*m+1)-1)/2);
+    }
+}
