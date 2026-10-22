@@ -43,6 +43,8 @@ public class Solution {
     }
 }
 
+
+
 // APPROACH 2
 class Solution {
     int single(int[] arr) {
