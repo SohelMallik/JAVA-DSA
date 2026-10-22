@@ -50,7 +50,7 @@ class Solution {
         int m = b.length;
 
         int k = 0;
-
+//T : O(N + M)
         for (int i = 0; i < n; i++) {
             res[k++] = a[i];
         }
