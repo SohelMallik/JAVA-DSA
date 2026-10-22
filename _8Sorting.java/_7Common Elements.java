@@ -28,7 +28,7 @@ class Solution {
         
         int i = 0;
         int j = 0;
-        
+    // T : O(M+N) S : O(1)
         while(i < a.length && j < b.length){
             if(a[i] == b[j]){
                 result.add(a[i]);
