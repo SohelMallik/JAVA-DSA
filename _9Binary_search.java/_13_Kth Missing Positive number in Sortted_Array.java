@@ -18,3 +18,18 @@
 
 // 1 ≤ arr.size(), k ≤ 105
 // 1 ≤ arr[i] ≤ 106
+
+class Solution {
+    public int kthMissing(int[] arr, int k) {
+        // code here
+        int l = 0, h = arr.length-1;
+        while(l <= h){
+            int mid = l +(h-l)/2;
+            int missvalue = arr[mid] - (mid+1);
+            
+            if (missvalue < k) l = mid+1;
+            else h = mid-1;
+        }
+        return h+1+k;
+    }
+}
