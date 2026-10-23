@@ -25,7 +25,8 @@ class Solution {
         // code here
         int rows = mat.length, cols = mat[0].length;
         int l =0, h = (rows*cols)-1;
-        
+        //T : O(mn)
+        //S : O(1)
         while(l <= h){
             int mid = l +(h-l)/2;
             int midrows = mid/cols, midcols = mid%cols;
